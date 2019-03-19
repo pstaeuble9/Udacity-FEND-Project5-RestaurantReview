@@ -1,11 +1,9 @@
 
 # Restaurant Review App
 
-**Restaurant Review App** — Stage 1
+**Restaurant Review App**
 
-Student Project #6 during Google Front-End Development Nanodegree Program at Udacity
-
-[See live project](https://dominicom.github.io/restaurant-review-app/)
+Student Project #6 during Front-End Development Nanodegree Program at Udacity
 
 ## Table of Contents
 
@@ -17,9 +15,11 @@ Student Project #6 during Google Front-End Development Nanodegree Program at Uda
 
 ## Project Overview
 
-This is #6 student project made for Udacity classroom on Front-End Web Developer track.
+This is project #6 for the Udacity nanodegree - Front-End Web Developer.
 
-For the **Restaurant Reviews** projects, students have to incrementally convert a static webpage to a mobile-ready web application. In **Stage One**, this project is a static design that lacks accessibility and need to convert the design to be responsive on different sized displays and accessible for screen reader use. There is also need to add a service worker to begin the process of creating a seamless offline experience for users.
+For the **Restaurant Reviews** projects, students have to incrementally convert a static webpage to a mobile-ready web application. 
+
+In **Stage One**, this project is a static design that lacks accessibility and need to convert the design to be responsive on different sized displays and accessible for screen reader use. There is also need to add a service worker to begin the process of creating a seamless offline experience for users.
 
 #### Specification
 
@@ -38,11 +38,7 @@ This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://w
 
 ## How to Run Application
 
-#### Possible choices:
-
-**1**. Open live project [here](https://dominicom.github.io/restaurant-review-app/).
-
-**2**. Or run it on your local machine:
+Run it on your local machine:
 * download or clone the repository
 * next follow these [instructions](#instructions)
 
