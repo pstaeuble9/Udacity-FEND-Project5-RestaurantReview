@@ -33,39 +33,44 @@ const assets = [
   'https://fonts.googleapis.com/css?family=Montserrat:600'
 ];
 
+/**
+ * Installation of service worker
+ */
 self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open(staticCacheName)
-      .then( (cache) => {
-        return cache.addAll(assets);
-      })
-  );
-});
-
-self.addEventListener('activate', function (event) {
     event.waitUntil(
-        caches.keys()
-          .then( (cacheNames) => {
-            return Promise.all(
-                cacheNames.filter(function (cacheName) {
-                    return cacheName.startsWith('review-') &&
-                        cacheName != staticCacheName;
-                }).map(function (cacheName) {
-                    return caches.delete(cacheName);
-                })
-            );
-          })
+        caches.open(staticCacheName).then(function(cache) {
+            return cache.addAll(urlsToCache);
+        })
     );
 });
 
 
+/**
+ * Activation of service worker
+ */
+self.addEventListener('activate', function(event) {
+    event.waitUntil(
+        caches.keys().then(function(cacheNames) {
+            return Promise.all(
+                cacheNames.filter(function(cacheName) {
+                    return cacheName.startsWith('restaurant-') &&
+                        cacheName != staticCacheName;
+                }).map(function(cacheName) {
+                    return caches.delete(cacheName);
+                })
+            );
+        })
+    );
+});
 
 
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        return response || fetch(event.request);
-      })
-  );
+/**
+ * Fetching for offline content viewing
+ */
+self.addEventListener('fetch', function(event) {
+    event.respondWith(
+        caches.match(event.request).then(function(response) {
+            return response || fetch(event.request);
+        })
+    );
 });
