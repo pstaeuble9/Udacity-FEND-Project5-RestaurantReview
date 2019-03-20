@@ -67,7 +67,8 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img';
   image.style.backgroundImage = `url('${DBHelper.imageUrlForRestaurant(restaurant)}')`;
-  image.setAttribute('aria-label', 'Image ' + restaurant.name + ' restaurant, ');
+  image.setAttribute('alt', 'Image ' + restaurant.name + ' restaurant, ');
+  image.alt = `${restaurant.name} Restaurant`;
   // image.tabIndex = '2';
 
   const location = document.getElementById('restaurant-location');
